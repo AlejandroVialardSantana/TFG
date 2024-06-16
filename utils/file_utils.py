@@ -13,9 +13,16 @@ def process_images(source_folder, target_folder, process_function, process_funct
             image_path = os.path.join(source_folder, filename)
             save_path = os.path.join(target_folder, f'{file_suffix}{filename}')
             
-            image = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
-            if image is not None:
-                processed_image = process_function(image, *process_function_args) if process_function_args else process_function(image)
-                if processed_image is not None:
+            if process_function.__name__ == 'add_fire_pattern':
+                processed_image = process_function(image_path, *process_function_args) if process_function_args else process_function(image_path)
+            else:
+                image = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
+                if image is not None:
+                    processed_image = process_function(image, *process_function_args) if process_function_args else process_function(image)
+            
+            if processed_image is not None:
+                if process_function.__name__ == 'add_fire_pattern':
+                    processed_image.save(save_path)
+                else:
                     cv2.imwrite(save_path, processed_image)
-                    print(f'Archivo procesado guardado en: {save_path}')
+                print(f'Archivo procesado guardado en: {save_path}')
