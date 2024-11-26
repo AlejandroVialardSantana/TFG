@@ -1,6 +1,8 @@
 # TFG - Detección temprana de anomalías térmicas en escenas a larga distancia mediante una cámara térmico-óptica 📷
 
-Este proyecto tiene como objetivo desarrollar un modelo de aprendizaje automático para la identificación precisa de zonas o puntos de calor en imágenes capturadas por cámaras PTZ. El desafío se aborda a través de la manipulación y análisis de termogramas o imágenes en escala de grises que reflejan variaciones de temperatura. Esto permite un tratamiento detallado y específico sobre las máscaras de calor en escenas a larga distancia. La cámara mencionada no facilita el acceso a los datos RAW, lo que dificulta el análisis de los datos pero supone un desafío mayor, ya que debemos analizar anomalías a partir de las propias imágenes.
+En este trabajo de fin de título (TFT) se investigaron diversas técnicas de aprendizaje automático para desarrollar un modelo capaz de detectar anomalías térmicas, como fuego y humo, en entornos portuarios, empleando una cámara Hikvision bi-espectro. Se exploraron y evaluaron distintos modelos hasta lograr un enfoque óptimo. Para el entrenamiento, se creó un dataset sintético con imágenes térmicas de incendios, que luego se combinó con imágenes reales para validar el rendimiento del sistema. El modelo final es capaz de generar alertas tempranas, contribuyendo a la prevención de daños y a la seguridad en áreas costeras. Este enfoque integra técnicas avanzadas para mejorar la vigilancia en infraestructuras portuarias.
+
+El repositorio contiene diferentes utilidades y casos de uso que fueron utilizados en el desarrollo e investigación, como puede ser procesamiento de imágenes, operaciones con ficheros o preparación de datos para entrenamiento de modelos.
 
 ## 📁 Estructura de Directorios
 
@@ -10,22 +12,10 @@ TFG/ <br>
 |-- README.md **# Documentación del proyecto.** <br>
 |-- requirements.txt **# Dependencias del proyecto.** <br>
 |-- camera/ **# Módulo para la gestión de la cámara.** <br>
-|   |-- \__init__.py **# Hace que Python trate los directorios como módulos.** <br>
-|   |-- thermal_camera.py **# Gestiona la funcionalidad térmica de la cámara.** <br>
 |-- data/ **# Directorio para almacenar datos de entrada y salida.** <br>
-|   |-- images/ **# Imágenes originales.** <br>
-|   |-- masks/ **# Máscaras generadas.** <br>
-|   |-- simulated_fire/ **# Imágenes con fuego simulado.** <br>
 |-- image_processing/ **# Módulo para procesamiento de imágenes.** <br>
-|   |-- \__init__.py **# Hace que Python trate los directorios como módulos.** <br>
-|   |-- fire_detection.py **# Detección de zonas de fuego.** <br>
-|   |-- image_processor.py **# Procesamiento básico de imágenes.** <br>
-|   |-- simulated_fire.py **# Generación de fuego simulado en imágenes.** <br>
-|   |-- perlin_noise.py **# Generación de ruido Perlin para simular fuego.** <br>
 |-- utils/ **# Utilidades y funciones auxiliares.** <br>
-|   |-- \__init__.py **# Hace que Python trate los directorios como módulos.** <br>
-|   |-- file_utils.py **# Funciones para manejo de archivos y directorios.** <br>
-|   |-- test_image_processor.py **# Pruebas para el módulo de procesamiento de imágenes.** <br>
+|-- scripts/ **# Casos de uso completos de algunas funciones** <br>
 |-- .gitignore **# Archivos y directorios ignorados por Git.** <br>
 
 ## 📄 Archivo .env
@@ -46,6 +36,6 @@ Variables de entorno necesarias:
 - [ONVIF](https://www.onvif.org/) - Estándar para la comunicación en sistemas de videovigilancia.
 - [OpenCV](https://opencv.org/) - Biblioteca de procesamiento de imágenes en tiempo real.
 
-## ✒️ Autores
+## ✒️ Autor
 
 - **Alejandro Vialard Santana**  - [GitHub](https://github.com/AlejandroVialardSantana)
