@@ -34,6 +34,7 @@ Variables de entorno necesarias:
 
 - [Python](https://www.python.org/) - El lenguaje de programación usado.
 - [ONVIF](https://www.onvif.org/) - Estándar para la comunicación en sistemas de videovigilancia.
+- [PyTorch](https://pytorch.org/) - Biblioteca de código abierto para machine learning que permite desarrollar y entrenar modelos de aprendizaje profundo de manera flexible y eficiente.
 - [OpenCV](https://opencv.org/) - Biblioteca de procesamiento de imágenes en tiempo real.
 
 ## ✒️ Autor
